@@ -1,0 +1,7 @@
+@charset "ISO-8859-1";
+
+body { font-family: arial;}
+h1 {color : red; letter-spacing:2pt}
+h2 {color : blue}
+
+.topics {color:green}
