@@ -5,16 +5,15 @@
     <welcome-file>intr.html</welcome-file>
   </welcome-file-list>
   <servlet>
-     <servlet-name>life</servlet-name>
-     <servlet-class>servlets.LifeCycleDemoServlet</servlet-class>
-     <init-param>
-        <param-name>title</param-name>
-        <param-value>Srikanth Technologies</param-value>
-     </init-param>
+    <servlet-name>life</servlet-name>
+    <servlet-class>servlets.LifeCycleDemoServlet</servlet-class>
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>Srikanth Technologies</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
-     <servlet-name>life</servlet-name>
-     <url-pattern>/lifecycle</url-pattern>
+    <servlet-name>life</servlet-name>
+    <url-pattern>/lifecycle</url-pattern>
   </servlet-mapping>
-  
 </web-app>
