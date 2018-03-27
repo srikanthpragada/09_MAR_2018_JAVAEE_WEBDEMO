@@ -9,7 +9,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-@WebFilter("/*")
+// @WebFilter("/*")
 public class LogFilter implements Filter {
 	public void destroy() {
 		// TODO Auto-generated method stub
@@ -17,7 +17,8 @@ public class LogFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		System.out.println("In Filter");
-		chain.doFilter(request, response);  // call original page
+		chain.doFilter(request, response);  // call original URL
+		System.out.println("End of Filter");
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {

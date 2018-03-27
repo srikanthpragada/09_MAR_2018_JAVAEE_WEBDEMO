@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-@WebListener
+// @WebListener
 public class SessionCountListener implements ServletContextListener, HttpSessionListener {
 
 	public void contextInitialized(ServletContextEvent sce) {
