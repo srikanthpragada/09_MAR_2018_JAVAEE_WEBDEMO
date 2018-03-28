@@ -10,9 +10,15 @@
 </head>
 <body>
   <h2>List Of Jobs</h2>
+  <select>
+    <st:jobs3>
+     <option value="${id}">${title}</option>
+     </st:jobs3>
+  </select>
+  <p></p>
   <ul>
   <st:jobs3>
-   <li>${title} - ${minsalary} </li>
+   <li>${title} - ${minSalary} </li>
   </st:jobs3>
   </ul>
   
