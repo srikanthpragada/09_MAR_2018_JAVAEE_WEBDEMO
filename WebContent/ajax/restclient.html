@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Rest Client</title>
+<script src="jquery/jquery-3.3.1.js"></script>
+<script>
+  function callHello() 
+  {
+	  $.get("http://localhost:8888/webdemo/rest/hello",
+			{},
+			function(result) {
+		       $("#hello").text(result);		
+			} 
+      );
+  }
+</script>
+</head>
+<body>
+<h1>Rest Client</h1>
+<button onclick="callHello()">Call Hello </button>
+<h2 id="hello"></h2>
+
+
+</body>
+</html>
