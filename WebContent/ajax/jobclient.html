@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Rest Client</title>
+<script src="jquery/jquery-3.3.1.js"></script>
+<script>
+	function deleteJob() {
+		$.ajax(
+ 		  {
+			url : "/webdemo/rest/jobs/" + $("#jobid").val(),
+			method : "delete",
+			complete : showDeleteResult
+		 }
+       );
+	}
+
+	function showDeleteResult(result) {
+		if (result.status != 404 && result.status != 500)
+			alert("Deleted Successfully");
+		else
+			alert("Sorry! Could not delete book!");
+	}
+
+	function getAllJobs() {
+		$.getJSON("http://localhost:8888/webdemo/rest/jobs", {},
+				function(jobs) {
+					output = ""
+					$.each(jobs, function(idx, job) {
+						output += "<tr><td>" + job.id + "</td><td>" + job.title
+								+ "</td><td>" + job.min + "</td><td>" + job.max
+								+ "</td></tr>";
+					});
+
+					$("#jobsData").html(output);
+					$("#jobsTable").css("visibility", "visible");
+
+				});
+	}
+</script>
+</head>
+<body>
+	<h1>Jobs Client</h1>
+	Job Id :
+	<input type="text" id="jobid" />
+	<button onclick="deleteJob()">Delete</button>
+
+	<p />
+	<button onclick="getAllJobs()">Get All Jobs</button>
+
+	<p />
+	<div id="jobsTable" style="visibility: hidden">
+		<table border="1">
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Min Salary</th>
+				<th>Max Salary</th>
+			</tr>
+			<tbody id="jobsData">
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

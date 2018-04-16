@@ -72,8 +72,9 @@ public class JobsService {
 	}
 
 	@DELETE
-	public void deleteJobs() {
-
+	@Path("/{id}")
+	public void deleteJob(@PathParam("id") String id) {
+		 System.out.println("Deleting job : " + id);
 	}
 
 }

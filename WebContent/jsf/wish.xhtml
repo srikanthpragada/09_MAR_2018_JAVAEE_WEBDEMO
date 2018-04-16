@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+<title>Wishing</title>
+</head>
+<body>
+<h:form>
+ Name : <h:inputText value="#{wishBean.name}"></h:inputText>
+ <p/>
+ <h:commandButton value="Submit"
+     actionListener="#{wishBean.wish}"></h:commandButton>
+ <p/>
+ #{wishBean.message}     
+</h:form>
+</body>
+</html>
