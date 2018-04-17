@@ -19,6 +19,7 @@ public class WishBean {
 		return message;
 	}
 
+	// Action Listener 
 	public void wish(ActionEvent evt) {
 		message = "Welcomt " + name + " to JSF";
 	}
