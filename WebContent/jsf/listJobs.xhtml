@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+<title>List Of Jobs</title>
+<style>
+   .colhead { background-color : navy; color :white;}
+</style>
+</head>
+<body>
+	<h2>List Of Jobs</h2>
+	<h:dataTable value="#{jobsBean.jobs}" var="job"
+	  headerClass="colhead"
+	  border="1">
+		<h:column>
+			<f:facet name="header">Job Title</f:facet>
+ 				#{job.job_title}
+ 	   </h:column>
+ 	   
+ 	   <h:column>
+			<f:facet name="header">Max Salary</f:facet>
+ 				#{job.max_salary}
+ 	   </h:column>
+	</h:dataTable>
+</body>
+</html>

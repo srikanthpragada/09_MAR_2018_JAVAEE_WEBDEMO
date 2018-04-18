@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+<title>List Of Jobs</title>
+<style>
+.colhead {
+	background-color: navy;
+	color: white;
+}
+</style>
+</head>
+<body>
+	<h2>List Of Jobs</h2>
+
+		<ui:repeat value="#{jobsBean.jobObjects}" 
+		    var="job" offset="5" varStatus="stat">
+			<h4>
+			    #{job.id} - #{job.title} - #{job.min}  
+    			<ui:fragment rendered ="#{job.min > 8000}">
+                      [Costly Job]
+                </ui:fragment>
+			</h4>
+		</ui:repeat>
+
+</body>
+</html>
