@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+<title>Add Numbers</title>
+<!--  Needed to insert JS to make AJAX calls  -->
+<h:head></h:head>
+<script src="../ajax/jquery/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	function validateData() {
+		var first = parseInt($("#first").val());
+		//  encloded less than 
+		if (first &lt; 0) {
+			 $("#firstError").text("Value must be positive!")
+			 return;
+		}
+		
+		var second = parseInt($("#second").val());
+		if (second &lt; 0) {
+			 $("#secondError").text("Value must be positive!")
+			 return;
+		}
+	}
+</script>
+</head>
+<body>
+	<h:form prependId="false">
+		<h1>Add Numbers</h1>
+	  First Number <br />
+		<h:inputText id="first" value="#{addBean.first}"
+		    p:onBlur="validateData()">
+		</h:inputText>
+		<span id="firstError"></span>	
+		<p></p>
+	  Second Number <br />
+		<h:inputText id="second" value="#{addBean.second}" 
+		     p:onBlur="validateData()">
+		</h:inputText>
+		<span id="secondError"></span>
+		<p></p>
+		<h:commandButton value="Add" actionListener="#{addBean.add}">
+			<f:ajax execute="first second" render="result"></f:ajax>
+		</h:commandButton>
+		<p></p>
+		<h:outputText id="result" value="#{addBean.result}" />
+
+	</h:form>
+</body>
+</html>
